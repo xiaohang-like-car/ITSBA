@@ -1,0 +1,2 @@
+execute as @e[type=inside_the_system:cool_player_303] if entity @e[type=inside_the_system:cool_player_303,nbt={Health:8.0f}] run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"ちょっと体調が良くない気がする…"}]
+execute as @e[type=inside_the_system:cool_player_303] if entity @e[type=inside_the_system:cool_player_303,nbt={Health:1.0f}] run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"私は治療用のポーションが必要です！"}]

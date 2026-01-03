@@ -1,0 +1,2 @@
+scoreboard players set server/security config 1
+tellraw @s [{"text":"[ITSBA-Settings] "},{"text":"Security module enabled,the minecraft arrow/trident and tacz:bullet can't hurt Aiko.","color":"green"}]
