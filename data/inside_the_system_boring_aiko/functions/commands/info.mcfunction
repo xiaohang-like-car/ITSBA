@@ -1,2 +1,2 @@
-tellraw @s [{"text":"[ITSBA-About Data pack] "},{"text":"Data pack 'Inside The System - Boring Aiko' 1.0.20260102","color":"green"}]
+tellraw @s [{"text":"[ITSBA-About Data pack] "},{"text":"Data pack 'Inside The System - Boring Aiko' 1.0.20260108","color":"green"}]
 tellraw @s [{"text":"[ITSBA-About Data pack] "},{"text":"Production：Sorrow Andmin[EN-Name]/小杭不是航[CN-Name]","color":"green"}]

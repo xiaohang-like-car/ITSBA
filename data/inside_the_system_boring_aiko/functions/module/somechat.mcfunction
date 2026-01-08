@@ -2,7 +2,7 @@
 #execute as @e[type=inside_the_system:cool_player_303,name=CoolPlayer303,tag=only] run data modify entity @s ForgeData.coolPlayerLastSpoke set value 10000l
 execute if score server/ramdom_chat config matches 31 run scoreboard players set server/ramdom_chat config 0
 execute if score server/ramdom_chat config matches 0..30 run scoreboard players add server/ramdom_chat config 1
-execute if score server/ramdom_chat/time config matches 24001 run scoreboard players set server/ramdom_chat/time config 0
+execute if score server/ramdom_chat/time config matches 24001.. run scoreboard players set server/ramdom_chat/time config 0
 execute if score server/ramdom_chat/time config matches 0..24000 run scoreboard players add server/ramdom_chat/time config 1
 
 
@@ -42,3 +42,19 @@ execute as @a if score @s joined_world matches 20 run tellraw @a [{"text":"<Cool
 
 #特殊聊天--返回出生点时
 execute unless entity @e[name=CoolPlayer303,tag=only,type=inside_the_system:cool_player_303] run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"I went to spawnpoint,if you want me to come to you,just call me!"}]
+
+#特殊聊天--玩家目视Aiko过久时
+#-前置组件
+execute as @a if score @s data-looked_at_player_time matches 3001.. run scoreboard players set @s data-looked_at_player_time 0
+execute as @e[type=inside_the_system:cool_player_303,tag=only,name=CoolPlayer303] at @s if entity @p[distance=..10,limit=1,sort=nearest,tag=looking_at_aiko] run execute as @a[tag=looking_at_aiko] run scoreboard players add @s data-looked_at_player_time 1
+#-聊天组件
+execute as @a if score @s data-looked_at_player_time matches 3000 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"Hehe,why are you looking at me for so long? (owO)"}]
+
+#特殊随机聊天
+#1--前置组件
+execute if score server/ramdom_chat config matches 30 run execute if score server/ramdom_chat/time config matches 24000 run scoreboard players set server/ramdom_chat/diffrent_ramdomchat config 1
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 0 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 0.. run scoreboard players set server/ramdom_chat/diffrent_ramdomchat/time config 0
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 1 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 0..21 run scoreboard players add server/ramdom_chat/diffrent_ramdomchat/time config 1
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 1 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 22.. run scoreboard players set server/ramdom_chat/diffrent_ramdomchat config 0
+#1-希望有新的灵魂来陪伴Aiko
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 1 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 1 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"I wish there were new players to play with me..."}]
