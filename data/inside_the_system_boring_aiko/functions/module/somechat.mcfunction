@@ -1,7 +1,7 @@
 #前置组件
 #execute as @e[type=inside_the_system:cool_player_303,name=CoolPlayer303,tag=only] run data modify entity @s ForgeData.coolPlayerLastSpoke set value 10000l
-execute if score server/ramdom_chat config matches 31 run scoreboard players set server/ramdom_chat config 0
-execute if score server/ramdom_chat config matches 0..30 run scoreboard players add server/ramdom_chat config 1
+execute if score server/ramdom_chat config matches 32 run scoreboard players set server/ramdom_chat config 0
+execute if score server/ramdom_chat config matches 0..31 run scoreboard players add server/ramdom_chat config 1
 execute if score server/ramdom_chat/time config matches 24001.. run scoreboard players set server/ramdom_chat/time config 0
 execute if score server/ramdom_chat/time config matches 0..24000 run scoreboard players add server/ramdom_chat/time config 1
 
@@ -10,10 +10,10 @@ execute if score server/ramdom_chat/time config matches 0..24000 run scoreboard 
 execute if score server/ramdom_chat config matches 1 if score server/ramdom_chat/time config matches 24000 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"How fell on today?"}]
 execute if score server/ramdom_chat config matches 2 if score server/ramdom_chat/time config matches 24000 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"今日もたのしいですれ！"}]
 execute if score server/ramdom_chat config matches 3 if score server/ramdom_chat/time config matches 24000 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"Can I help you with something?"}]
-#execute if score server/ramdom_chat config matches 4 if score server/ramdom_chat/time config matches 24000 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"text"}]
-#execute if score server/ramdom_chat config matches 5 if score server/ramdom_chat/time config matches 24000 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"text"}]
-#execute if score server/ramdom_chat config matches 6 if score server/ramdom_chat/time config matches 24000 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"text"}]
-#execute if score server/ramdom_chat config matches 7 if score server/ramdom_chat/time config matches 24000 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"text"}]
+execute if score server/ramdom_chat config matches 4 if score server/ramdom_chat/time config matches 24000 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"Sometimes,I fell bored in this world,can i watch you to play ohter games?(◍•ᴗ•◍)"}]
+execute if score server/ramdom_chat config matches 5 if score server/ramdom_chat/time config matches 24000 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"Say some jokes that's really annoying to me,I cannot hack chinses firewall!"}]
+execute if score server/ramdom_chat config matches 6 if score server/ramdom_chat/time config matches 24000 run tellraw @r {"translate":"commands.message.display.incoming","with":["CoolPlayer303","So, do you have any secrets? ^_^"],"color":"gray","italic":"true"}
+execute if score server/ramdom_chat config matches 7 if score server/ramdom_chat/time config matches 24000 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"\"_lazy夜_\" he is very handsome.I like him!"}]
 #execute if score server/ramdom_chat config matches 8 if score server/ramdom_chat/time config matches 24000 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"text"}]
 #execute if score server/ramdom_chat config matches 9 if score server/ramdom_chat/time config matches 24000 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"text"}]
 #execute if score server/ramdom_chat config matches 10 if score server/ramdom_chat/time config matches 24000 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"text"}]
@@ -45,16 +45,36 @@ execute unless entity @e[name=CoolPlayer303,tag=only,type=inside_the_system:cool
 
 #特殊聊天--玩家目视Aiko过久时
 #-前置组件
-execute as @a if score @s data-looked_at_player_time matches 3001.. run scoreboard players set @s data-looked_at_player_time 0
-execute as @e[type=inside_the_system:cool_player_303,tag=only,name=CoolPlayer303] at @s if entity @p[distance=..10,limit=1,sort=nearest,tag=looking_at_aiko] run execute as @a[tag=looking_at_aiko] run scoreboard players add @s data-looked_at_player_time 1
+#execute as @a if score @s data-looked_at_player_time matches 3001.. run scoreboard players set @s data-looked_at_player_time 0
+#execute as @e[type=inside_the_system:cool_player_303,tag=only,name=CoolPlayer303] at @s if entity @p[distance=..10,limit=1,sort=nearest,tag=looking_at_aiko] run execute as @a[tag=looking_at_aiko] run scoreboard players add @s data-looked_at_player_time 1
 #-聊天组件
-execute as @a if score @s data-looked_at_player_time matches 3000 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"Hehe,why are you looking at me for so long? (owO)"}]
+#execute as @a if score @s data-looked_at_player_time matches 3000 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"Hehe,why are you looking at me for so long? (owO)"}]
 
 #特殊随机聊天
 #1--前置组件
 execute if score server/ramdom_chat config matches 30 run execute if score server/ramdom_chat/time config matches 24000 run scoreboard players set server/ramdom_chat/diffrent_ramdomchat config 1
 execute if score server/ramdom_chat/diffrent_ramdomchat config matches 0 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 0.. run scoreboard players set server/ramdom_chat/diffrent_ramdomchat/time config 0
-execute if score server/ramdom_chat/diffrent_ramdomchat config matches 1 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 0..21 run scoreboard players add server/ramdom_chat/diffrent_ramdomchat/time config 1
-execute if score server/ramdom_chat/diffrent_ramdomchat config matches 1 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 22.. run scoreboard players set server/ramdom_chat/diffrent_ramdomchat config 0
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 1 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 0..2230 run scoreboard players add server/ramdom_chat/diffrent_ramdomchat/time config 1
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 1 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 2231.. run scoreboard players set server/ramdom_chat/diffrent_ramdomchat config 0
 #1-希望有新的灵魂来陪伴Aiko
-execute if score server/ramdom_chat/diffrent_ramdomchat config matches 1 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 1 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"I wish there were new players to play with me..."}]
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 1 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 1 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"You know,I thought of a question."}]
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 1 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 31 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"I dead,but my soul hasn't disappeared; it has come here."}]
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 1 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 61 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"Maybe is God can't just let me die?"}]
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 1 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 91 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"So i come to there and let you help me get revenge."}]
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 1 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 121 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"And have you accompany me."}]
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 1 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 151 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"If other souls also die with resentment like this, could there be a good outcome and bring them here?"}]
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 1 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 181 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"HeHe,i'm kind of loooking forward to it."}]
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 1 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 230 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"What do you think?"}]
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 1 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 230 run tellraw @a [{"text":"[Recognize]","clickEvent": {"action":"run_command","value":"/function inside_the_system_boring_aiko:commands/reply_aiko/drc1/1"},"color":"#d0e6dc"},{"text": " "},{"text":"[Unrecognize]","clickEvent": {"action":"run_command","value":"/function inside_the_system_boring_aiko:commands/reply_aiko/drc1/2"},"color":"#d0e6dc"}]
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 1 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 2230 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"...I see,maybe you're busy now."}]
+#2--前置组件
+execute if score server/ramdom_chat config matches 31 run execute if score server/ramdom_chat/time config matches 24000 run scoreboard players set server/ramdom_chat/diffrent_ramdomchat config 2
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 2 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 0..121 run scoreboard players add server/ramdom_chat/diffrent_ramdomchat/time config 1
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 2 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 122.. run scoreboard players set server/ramdom_chat/diffrent_ramdomchat config 0
+#2-彩蛋
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 2 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 1 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"Hey!I found something interesting!"}]
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 2 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 31 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"It's a photo!"}]
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 2 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 61 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"I dont't konw where it came from,This photo seems to record some intersting things."}]
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 2 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 91 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"This photo seems to show what I look like when I'm angry, haha, and it's kind of cute too."}]
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 2 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 121 run tellraw @a [{"text":"<CoolPlayer303>"},{"text":" "},{"text":"Do you want to have a look?"}]
+execute if score server/ramdom_chat/diffrent_ramdomchat config matches 2 if score server/ramdom_chat/diffrent_ramdomchat/time config matches 121 run tellraw @a [{"text":"[Take the photo]","clickEvent": {"action":"run_command","value":"/function inside_the_system_boring_aiko:commands/give_item/photos/1"},"color":"#d0e6dc"}]

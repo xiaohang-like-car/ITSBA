@@ -1,0 +1,4 @@
+execute if score server/ramdom_chat/diffrent_ramdomchat/time config matches 230..2230 if score server/ramdom_chat/diffrent_ramdomchat config matches 1 run scoreboard players set @s data-tell_aiko 4
+execute if score server/ramdom_chat/diffrent_ramdomchat/time config matches 230..2230 if score server/ramdom_chat/diffrent_ramdomchat config matches 1 run scoreboard players set server/ramdom_chat/diffrent_ramdomchat/time config 2231
+execute unless score server/ramdom_chat/diffrent_ramdomchat config matches 1 unless score server/ramdom_chat/diffrent_ramdomchat/time config matches 230..2230 run title @s actionbar [{"text":"Now you mustn't to reply."}]
+execute as @s run function inside_the_system_boring_aiko:module/somechat_player_replies

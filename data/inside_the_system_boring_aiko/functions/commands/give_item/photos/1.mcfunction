@@ -1,0 +1,2 @@
+tellraw @s [{"text":"[ITSBA-Tips]"},{"text":" You can view the full image in the '/textures/others/meme1.png' under the 'inside_the_system' namespace in the accompanying resource pack.","color":"yellow"}]
+give @s paper{display:{Name:'["",{"text":"Photo","bold":true}]',Lore:['["",{"text":"This thing dosen\'t seem to be something in Aiko\'s memories, but somehow it can be retrieved.","italic":false,"color":"white"}]']},CustomModelData:1004}
