@@ -36,3 +36,6 @@ execute if score @s data-tell_aiko matches 1 if score @s data-tick matches 22 ru
 #execute as @a if entity @e[tag=aiko_stay_place, type=minecraft:armor_stand] as @e[type=inside_the_system:cool_player_303,tag=only,name=CoolPlayer303] at @s if entity @e[tag=aiko_stay_place, type=minecraft:armor_stand, distance=..2] run scoreboard players add server/aiko_staied_time config 1
 #execute if score server/aiko_staied_time config matches 36000.. run scoreboard players set @a[scores={data-tell_aiko=0}] data-tell_aiko 0
 #execute if score server/aiko_staied_time config matches 36001.. run scoreboard players set server/aiko_staied_time config 0
+
+#房子搭建相关
+execute if entity @e[tag=house_creat_place] as @e[tag=house_creat_place] at @s run tp @e[tag=only,type=inside_the_system:cool_player_303] @s

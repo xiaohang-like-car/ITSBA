@@ -11,8 +11,13 @@ execute as @a run function inside_the_system_boring_aiko:module/tp
 function inside_the_system_boring_aiko:module/somechat
 execute if score server/security config matches 1 run function inside_the_system_boring_aiko:module/security
 execute as @a if score @s joined_world matches ..20 as @a run function inside_the_system_boring_aiko:ready_check
+execute as @e[tag=only,type=inside_the_system:cool_player_303] at @s run function inside_the_system_boring_aiko:module/house_create
+function inside_the_system_boring_aiko:module/events
 #其他
 execute as @a run scoreboard objectives add joined_world minecraft.custom:minecraft.play_time
+scoreboard players add server/aiko/stage config 1
+scoreboard players add server/time config 1
+
 #-数据包介绍
 execute as @a if score @s joined_world matches 20 as @s run tellraw @s [{"text":"[ITSBA-Tips] "},{"text":"If you want to enable security mode, type /function inside_the_system_boring_aiko:commands/settings/security/y"}]
 execute as @a if score @s joined_world matches 20 as @s run tellraw @s [{"text":"[ITSBA-Tips] "},{"text":"'The original author of the 'Inside The System' mod is dregir5."}]
